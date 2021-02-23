@@ -1,12 +1,16 @@
 import React from 'react'
 import { Container, TextXP, Progress } from '../styles/components/ExperienceBar'
+import ExperienceBarProps from '../types/ExperienceBarProps'
 
-export default function ExperienceBar() {
+const ExperienceBar: React.FC<ExperienceBarProps> = 
+  ({ initialXP, currentXP, finalXP }) => {
   return (
     <Container>
-      <TextXP>0 xp</TextXP>
-      <Progress />
-      <TextXP>600 xp</TextXP>
+      <TextXP>{initialXP} xp</TextXP>
+      <Progress initialXP={initialXP} currentXP={currentXP} finalXP={finalXP}/>
+      <TextXP>{finalXP} xp</TextXP>
     </Container>
   )
 }
+
+export default ExperienceBar
