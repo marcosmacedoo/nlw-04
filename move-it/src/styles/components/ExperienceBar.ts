@@ -22,7 +22,7 @@ export const Progress = styled.div<ExperienceBarProps>`
   &::after {
     content: '';
     position: absolute;
-    width: ${ (props) => ((props.currentXP*100) / props.finalXP) }%;
+    width: ${props => (props.currentXP * 100) / props.finalXP}%;
     height: 100%;
     background: var(--green);
     border-radius: 5px;
@@ -32,7 +32,7 @@ export const Progress = styled.div<ExperienceBarProps>`
     content: '${props => props.currentXP} xp';
     position: absolute;
     top: 12px;
-    left: ${(props) => ((props.currentXP*100) / props.finalXP)}%;
+    left: ${props => (props.currentXP * 100) / props.finalXP}%;
     transform: translateX(-50%);
   }
 `

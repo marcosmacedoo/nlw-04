@@ -1,5 +1,3 @@
-// import React from 'react'
-
 type ExperienceBarProps = {
   initialXP: number
   currentXP: number
