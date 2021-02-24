@@ -19,7 +19,6 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
   }
 
   body {
@@ -27,11 +26,13 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     background: var(--background);
     color: var(--text);
+    font-family: 'Inter', sans-serif;
   }
 
   button {
     cursor: pointer;
     outline: none;
+    border: none;
   }
 
   a {
@@ -57,7 +58,7 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const Container = styled.main`
-  height: 100%;
+  min-height: 100vh;
   max-width: 992px;
   padding: 2.5rem 1rem;
   margin: 0 auto;

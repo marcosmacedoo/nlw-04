@@ -4,7 +4,6 @@ import ExperienceBarProps from '../../types/ExperienceBarProps'
 export const Container = styled.header`
   display: flex;
   align-items: center;
-  justify-content: center;
 `
 
 export const TextXP = styled.span`
