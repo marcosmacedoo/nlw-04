@@ -7,6 +7,7 @@ import { Profile } from '../components/Profile'
 import { Container } from '../styles/GlobalStyle'
 import { Section, LeftContainer } from '../styles/pages/Home'
 import ChallengeBox from '../components/ChallengeBox'
+import { CountdownProvider } from '../contexts/CountdownContext'
 
 export default function Home() {
   return (
@@ -14,16 +15,18 @@ export default function Home() {
       <Head>
         <title>Move It</title>
       </Head>
-      <ExperienceBar initialXP={0} currentXP={100} finalXP={600} />
+      <ExperienceBar />
 
-      <Section>
-        <LeftContainer>
-          <Profile />
-          <CompletedChallenges />
-          <Countdown />
-        </LeftContainer>
-        <ChallengeBox />
-      </Section>
+      <CountdownProvider>
+        <Section>
+          <LeftContainer>
+            <Profile />
+            <CompletedChallenges />
+            <Countdown />
+          </LeftContainer>
+          <ChallengeBox />
+        </Section>
+      </CountdownProvider>
     </Container>
   )
 }

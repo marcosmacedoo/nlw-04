@@ -13,6 +13,7 @@ type ChallengesContextDataProps = {
   levelUp: () => void
   startNewChallenge: () => void
   resetChallenge: () => void
+  completeChallenge: () => void
 }
 
 export default ChallengesContextDataProps
