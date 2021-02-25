@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ChallengesContext } from '../contexts/ChallengesContexts'
 import {
   Container,
   Text,
@@ -6,10 +7,11 @@ import {
 } from '../styles/components/CompletedChallenges'
 
 export function CompletedChallenges() {
+  const { challengesCompleted } = useContext(ChallengesContext)
   return (
     <Container>
       <Text>Desafios completos</Text>
-      <AmountChallenges>1</AmountChallenges>
+      <AmountChallenges>{challengesCompleted}</AmountChallenges>
     </Container>
   )
 }

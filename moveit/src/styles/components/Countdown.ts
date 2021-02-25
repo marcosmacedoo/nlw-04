@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import CountdownButtonProps from '../../types/CountdownButtonProps'
 
 export const Container = styled.div`
   height: 9rem;
@@ -35,18 +36,27 @@ export const Group = styled.div`
   }
 `
 
-export const Button = styled.button`
+export const Button = styled.button<CountdownButtonProps>`
   width: 100%;
   height: 5rem;
   margin-top: 2rem;
   border-radius: 5px;
-  background: var(--blue);
-  color: var(--white);
+  background: ${props =>
+    props.isActiveButton ? 'var(--white)' : 'var(--blue)'};
+  color: ${props => (props.isActiveButton ? 'var(--title)' : 'var(--white)')};
   font-size: 1.25rem;
   font-weight: 600;
   transition: background-color 0.3s linear;
 
-  &:hover {
-    background: var(--blue-dark);
+  &:not(:disabled):hover {
+    background: ${props =>
+      props.isActiveButton ? 'var(--red)' : 'var(--blue-dark)'};
+    color: var(--white);
+  }
+
+  &:disabled {
+    background: var(--white);
+    color: var(--text);
+    cursor: not-allowed;
   }
 `

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import ExperienceBarProps from '../../types/ExperienceBarProps'
+import ProgressExperienceBarProps from '../../types/ProgressExperienceBarProps'
 
 export const Container = styled.header`
   display: flex;
@@ -10,7 +10,7 @@ export const TextXP = styled.span`
   font-size: 0.875rem;
 `
 
-export const Progress = styled.div<ExperienceBarProps>`
+export const Progress = styled.div<ProgressExperienceBarProps>`
   height: 4px;
   flex: 1;
   margin: 0 1.5rem;
@@ -21,17 +21,17 @@ export const Progress = styled.div<ExperienceBarProps>`
   &::after {
     content: '';
     position: absolute;
-    width: ${props => (props.currentXP * 100) / props.finalXP}%;
+    width: ${props => props.percentToNextLevel}%;
     height: 100%;
     background: var(--green);
     border-radius: 5px;
   }
 
   &::before {
-    content: '${props => props.currentXP} xp';
+    content: '${props => props.currentExperience} xp';
     position: absolute;
     top: 12px;
-    left: ${props => (props.currentXP * 100) / props.finalXP}%;
+    left: ${props => props.percentToNextLevel}%;
     transform: translateX(-50%);
   }
 `

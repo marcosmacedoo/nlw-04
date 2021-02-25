@@ -6,6 +6,7 @@ import ExperienceBar from '../components/ExperienceBar'
 import { Profile } from '../components/Profile'
 import { Container } from '../styles/GlobalStyle'
 import { Section, LeftContainer } from '../styles/pages/Home'
+import ChallengeBox from '../components/ChallengeBox'
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
           <CompletedChallenges />
           <Countdown />
         </LeftContainer>
-        <div></div>
+        <ChallengeBox />
       </Section>
     </Container>
   )
