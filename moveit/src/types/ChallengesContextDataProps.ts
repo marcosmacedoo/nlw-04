@@ -14,6 +14,7 @@ type ChallengesContextDataProps = {
   startNewChallenge: () => void
   resetChallenge: () => void
   completeChallenge: () => void
+  closeLevelUpModal: () => void
 }
 
 export default ChallengesContextDataProps
